@@ -24,3 +24,13 @@ e3.cargo = "Gerente 2"
 e3.salario = "5000000"
 
 print(e3)
+
+
+
+e4 = Empleado()
+e4.setNombre("Camilo")
+e4.apellido = "Cardenas"
+e4.cargo = "Gerente 2"
+e4.salario = "5000000"
+
+print(e4)
