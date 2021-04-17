@@ -15,3 +15,12 @@ e2.cargo = "Gerente"
 e2.salario = "5000000"
 
 print(e2)
+
+
+e3 = Empleado()
+e3.setNombre("Camilo")
+e3.apellido = "Cardenas"
+e3.cargo = "Gerente 2"
+e3.salario = "5000000"
+
+print(e3)
