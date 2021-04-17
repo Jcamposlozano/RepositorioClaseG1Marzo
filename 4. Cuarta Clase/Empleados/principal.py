@@ -1,3 +1,4 @@
+'''
 from empleado import Empleado
 
 e1 = Empleado()
@@ -53,3 +54,13 @@ e6.cargo = "Gerente 2"
 e6.salario = "5000000"
 
 print(e6)
+'''
+
+from indicadores import Indicadores
+
+i = Indicadores()
+print('TRM =', i.trm())
+print('Salario Minimo =', i.salariominimo())
+
+
+
