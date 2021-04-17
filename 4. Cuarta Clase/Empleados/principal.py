@@ -54,13 +54,49 @@ e6.cargo = "Gerente 2"
 e6.salario = "5000000"
 
 print(e6)
-'''
+
 
 from indicadores import Indicadores
 
 i = Indicadores()
 print('TRM =', i.trm())
 print('Salario Minimo =', i.salariominimo())
+
+'''
+
+from nomina import Nomina
+
+listaNomina = []
+
+while True:
+    print("1. Calcular Nomina")
+    print("10. salir")
+    respuesta = input("Ingrese la opcion ")
+
+    if respuesta == "1":
+        renglon = []
+        n = Nomina()
+        n.setSalario(float(input("ingrese el salario: ")))
+        n.setDiasLiquidados(int(input("Ingrese los dias liquidados:")))
+
+        renglon.append({'variable': 'Salario', 'resultado': n.getSalario()})
+        renglon.append({'variable': 'Dias Liquidados', 'resultado': n.getDiasLiquidados()})
+        renglon.append({'variable': 'Salario Devengado', 'resultado': n.salarioDevengado()})
+        renglon.append({'variable': 'Auxilio de transporte', 'resultado': n.auxilioTransporte()})
+        renglon.append({'variable': 'total devengado','resultado': n.totalDevengado()})
+        listaNomina.append(renglon)
+
+    elif respuesta == "10":
+        print("Saliendo")
+        break
+
+
+f = open('nomina_python.txt', 'w')
+for i in listaNomina:
+    f.write('**************************** \n')
+    for j in i:
+        f.write(str(j) + '\n')
+f.close()
 
 
 
