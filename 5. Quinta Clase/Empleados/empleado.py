@@ -6,6 +6,7 @@ class Empleado:
         self.__apellido = None
         self.__cargo = None
         self.__salario = None
+        self.__nomina = None
 
     def getNombre(self):
         return self.__nombre
@@ -31,14 +32,22 @@ class Empleado:
     def setSalario(self, salario):
         self.__salario = salario
 
+    def getNomina(self):
+        return self.__nomina
+    
+    def setNomina(self, nomina):
+        self.__nomina = nomina
 
     def __str__(self):
         return str("nombre: {} \n"
             "apellido: {} \n"
             "cargo: {} \n"
-            "salario: {}").format(
+            "salario: {} \n"
+            "********************\n"
+            "Nomina: {}").format(
                 self.__nombre,
                 self.__apellido,
                 self.__cargo,
-                self.__salario)
+                self.__salario,
+                self.__nomina)
 

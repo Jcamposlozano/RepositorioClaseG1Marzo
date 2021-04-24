@@ -93,7 +93,6 @@ class InterfazNomina:
         self.apellidos = StringVar()
         self.cargo = StringVar()
         self.salario = StringVar()
-        self.nomina = Nomina()
         self.texto = Text(self.root)
         self.empleados = []
 
@@ -110,19 +109,20 @@ class InterfazNomina:
         empleado.setApellido(self.apellidos.get())
         empleado.setCargo(self.cargo.get())
         empleado.setSalario(self.salario.get())
+
+        self.nomina = Nomina()
+        self.nomina.setSalario(float(self.salario.get()))
+        self.nomina.setDiasLiquidados(30)
+        empleado.setNomina(self.nomina)  
+
         self.empleados.append(empleado)
         self.texto.delete(1.0,'end')
-        for i in self.empleados:
-            self.texto.insert('insert', i)
-            self.nomina.setSalario(float(self.salario.get()))
-            self.nomina.setDiasLiquidados(30)
-            self.texto.insert('insert', "\n***********\n")
-            self.texto.insert('insert', self.nomina)
-            self.texto.insert('insert', "\n\n")
 
+        for i in self.empleados:
+            print(i)
+            self.texto.insert('insert', i)
+            self.texto.insert('insert', "\n\n")
         self.limpiar()
-        print(empleado)
-        print(self.nomina)
 
 
 
