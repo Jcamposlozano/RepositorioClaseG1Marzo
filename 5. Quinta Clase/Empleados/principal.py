@@ -62,7 +62,6 @@ i = Indicadores()
 print('TRM =', i.trm())
 print('Salario Minimo =', i.salariominimo())
 
-'''
 
 from nomina import Nomina
 
@@ -98,5 +97,7 @@ for i in listaNomina:
         f.write(str(j) + '\n')
 f.close()
 
+'''
+from interfaz import *
 
-
+InterfazNomina().interfaz()
